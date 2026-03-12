@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_executable(MyOpenGLApp
     src/main.cpp
-)
+ "src/shader.h")
 
 # ImGui backends (binding sources)
 # Ajuste típico: vcpkg expone los headers, pero tú compilas estos cpp.
@@ -30,3 +30,11 @@ target_link_libraries(MyOpenGLApp PRIVATE
 if (WIN32)
     target_link_libraries(MyOpenGLApp PRIVATE opengl32)
 endif()
+
+add_custom_command(TARGET MyOpenGLApp POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E make_directory
+            $<TARGET_FILE_DIR:MyOpenGLApp>/shader
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+            ${CMAKE_SOURCE_DIR}/shader
+            $<TARGET_FILE_DIR:MyOpenGLApp>/shader
+)
