@@ -33,8 +33,8 @@ endif()
 
 add_custom_command(TARGET MyOpenGLApp POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E make_directory
-            $<TARGET_FILE_DIR:MyOpenGLApp>/shader
+            $<TARGET_FILE_DIR:MyOpenGLApp>/resources
     COMMAND ${CMAKE_COMMAND} -E copy_directory
-            ${CMAKE_SOURCE_DIR}/shader
-            $<TARGET_FILE_DIR:MyOpenGLApp>/shader
+            ${CMAKE_SOURCE_DIR}/resources
+            $<TARGET_FILE_DIR:MyOpenGLApp>/resources
 )
