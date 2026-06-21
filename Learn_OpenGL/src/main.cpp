@@ -17,6 +17,17 @@
 
 #include <filesystem>
 
+/*
+#include "Application.h"
+
+int main()
+{
+    Application app;
+    return app.Run();
+}
+*/
+
+
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow* window);
 

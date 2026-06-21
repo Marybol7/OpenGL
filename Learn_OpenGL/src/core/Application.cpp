@@ -3,6 +3,8 @@
 
 Application::Application()
 {
+	Window window;
+	m_window = window;
 }
 
 Application::~Application()

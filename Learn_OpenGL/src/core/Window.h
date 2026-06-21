@@ -2,10 +2,12 @@
 
 #include <string>
 
+struct GLFWwindow;
+
 class Window {
 
 public:
-
+	Window();
 	Window(int width, int height, const std::string& title);
 	~Window();
 
@@ -18,4 +20,6 @@ private:
 	int m_height;
 	std::string m_title;
 	bool m_isOpen;
+
+	GLFWwindow* m_window = NULL;
 };

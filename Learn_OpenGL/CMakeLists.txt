@@ -6,13 +6,20 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_executable(MyOpenGLApp
     src/main.cpp
- "src/shader.h")
+    src/shader.h
 
-# ImGui backends (binding sources)
-# Ajuste típico: vcpkg expone los headers, pero tú compilas estos cpp.
-target_sources(MyOpenGLApp PRIVATE
-    
-    
+    src/core/Window.cpp
+    src/core/Window.h
+    src/core/Application.cpp
+    src/core/Application.h
+    src/core/Time.cpp
+    src/core/Time.h
+    src/core/Input.cpp
+    src/core/Input.h	
+)
+
+target_include_directories(MyOpenGLApp PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}/src
 )
 
 find_package(glfw3 CONFIG REQUIRED)
