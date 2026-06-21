@@ -19,6 +19,6 @@ private:
 	void Shutdown();
 
 private:
-	Window m_window;
+	Window* m_window = NULL;
 
 };

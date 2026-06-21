@@ -3,12 +3,10 @@
 
 #include "Window.h"
 
-Window::Window(){}
-
 Window::Window(int width, int height, const std::string& title)
 	: m_width(width), m_height(height), m_title(title), m_isOpen(false) 
 {
-	
+	m_window = glfwCreateWindow(width, height, title.c_str(), NULL, NULL);
 }
 
 Window::~Window() 

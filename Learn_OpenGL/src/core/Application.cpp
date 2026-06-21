@@ -3,8 +3,7 @@
 
 Application::Application()
 {
-	Window window;
-	m_window = window;
+	m_window = new Window(800, 600, "OpenGLWindow");
 }
 
 Application::~Application()
@@ -14,12 +13,12 @@ Application::~Application()
 int Application::Run()
 {
 	Init();
-	while (m_window.IsOpen())
+	while (m_window->IsOpen())
 	{
 		Update();
 		Render();
 
-		m_window.Close(); // For demonstration purposes, we close the window after one iteration
+		m_window->Close(); // For demonstration purposes, we close the window after one iteration
 
 	}
 	Shutdown();
@@ -30,7 +29,7 @@ int Application::Run()
 
 void Application::Init()
 {
-	m_window.Show();
+	m_window->Show();
 }
 
 void Application::Update()

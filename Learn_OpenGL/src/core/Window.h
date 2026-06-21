@@ -7,7 +7,7 @@ struct GLFWwindow;
 class Window {
 
 public:
-	Window();
+	
 	Window(int width, int height, const std::string& title);
 	~Window();
 
