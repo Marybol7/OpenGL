@@ -1,3 +1,6 @@
+#include <glad/glad.h>
+#include <GLFW/glfw3.h>
+
 #include "Application.h"
 
 
@@ -8,6 +11,7 @@ Application::Application()
 
 Application::~Application()
 {
+	delete m_window;
 }	
 
 int Application::Run()
@@ -17,8 +21,6 @@ int Application::Run()
 	{
 		Update();
 		Render();
-
-		m_window->Close(); // For demonstration purposes, we close the window after one iteration
 
 	}
 	Shutdown();
@@ -34,10 +36,21 @@ void Application::Init()
 
 void Application::Update()
 {
+	if ( glfwGetKey(m_window->GetNativeWindow(), GLFW_KEY_ESCAPE) == GLFW_PRESS)
+	{
+		m_window->Close();
+	}
+
 }	
 
 void Application::Render()
 {
+	glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+	glClear(GL_COLOR_BUFFER_BIT);
+
+
+	m_window->SwapBuffers();
+	m_window->PollEvents();
 }	
 
 

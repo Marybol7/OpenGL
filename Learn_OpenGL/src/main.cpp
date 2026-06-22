@@ -17,15 +17,14 @@
 
 #include <filesystem>
 
-/*
-#include "Application.h"
+
+#include "core/Application.h"
 
 int main()
 {
     Application app;
     return app.Run();
 }
-*/
 
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
@@ -34,7 +33,7 @@ void processInput(GLFWwindow* window);
 // settings
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
-
+/*
 int main()
 {
     // glfw: initialize and configure
@@ -204,7 +203,7 @@ int main()
     // ------------------------------------------------------------------
     glfwTerminate();
     return 0;
-}
+}*/
 
 // process all input: query GLFW whether relevant keys are pressed/released this frame and react accordingly
 // ---------------------------------------------------------------------------------------------------------

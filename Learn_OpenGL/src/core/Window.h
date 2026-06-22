@@ -14,6 +14,10 @@ public:
 	void Show();
 	void Close();
 	bool IsOpen() const;
+	void PollEvents();
+	void SwapBuffers();
+
+	GLFWwindow* GetNativeWindow() const { return m_window; }
 
 private: 	
 	int m_width;
